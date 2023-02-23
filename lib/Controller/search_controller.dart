@@ -9,7 +9,7 @@ class SearchController extends GetxController {
 
   List<UserModel> get searchedUsers => _searchUsers.value;
 
-  SearchUser(String typedUser) async {
+dynamic  searchUserFunc(String typedUser) async {
     _searchUsers.bindStream(
       firestore
           .collection('users')
