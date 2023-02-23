@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "710935496160",
+    "project_id": "tiktok-clone-26784",
+    "storage_bucket": "tiktok-clone-26784.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710935496160:android:655d80ea8be9567cc75785",
+        "android_client_info": {
+          "package_name": "com.example.ap2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710935496160-bkc7r9uea8r0anrre8f21q8um1t02ok4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAajk1vWecajfIvW6slAwSc0AHMV5xnGAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710935496160-bkc7r9uea8r0anrre8f21q8um1t02ok4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710935496160:android:c1ce79f07cf1d703c75785",
+        "android_client_info": {
+          "package_name": "com.example.app1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710935496160-bkc7r9uea8r0anrre8f21q8um1t02ok4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAajk1vWecajfIvW6slAwSc0AHMV5xnGAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710935496160-bkc7r9uea8r0anrre8f21q8um1t02ok4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
