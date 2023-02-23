@@ -1,4 +1,5 @@
 import 'package:ap2/Controller/search_controller.dart';
+import 'package:ap2/View/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,6 +23,7 @@ class SearchScreen extends StatelessWidget {
               ),
             ),
             onFieldSubmitted: (value) => searchController.searchUserFunc(value),
+            // onChanged:(value) => searchController.searchUserFunc(value),
           ),
         ),
         body: searchController.searchedUsers.isEmpty
@@ -40,7 +42,11 @@ class SearchScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final user = searchController.searchedUsers[index];
                   return InkWell(
-                    onTap: () {},
+                    onTap: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => ProfileScreen(uid: user.uid),
+                      ),
+                    ),
                     child: ListTile(
                       leading: CircleAvatar(
                         backgroundImage: NetworkImage(user.photoUrl),

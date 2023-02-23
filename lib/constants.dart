@@ -1,5 +1,6 @@
 import 'package:ap2/Controller/auth_controller.dart';
 import 'package:ap2/View/screens/addvideo_screen.dart';
+import 'package:ap2/View/screens/profile_screen.dart';
 import 'package:ap2/View/screens/search_screen.dart';
 import 'package:ap2/View/screens/vide_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,7 +14,7 @@ List<Widget> pages =  [
    SearchScreen(),
   const AddVideoScreen(),
   const Text('message screen'),
-  const Text('profile screen'),
+  ProfileScreen(uid: authController.user!.uid),
 ];
 
 //COLORS
