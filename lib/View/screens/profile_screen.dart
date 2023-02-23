@@ -53,6 +53,12 @@ class ProfileScreen extends StatelessWidget {
                             ],
                             
                           ),
+                          Container(
+                            color: Colors.black54,
+                            width: 1,
+                            height: 15,
+                            margin: const EdgeInsets.symmetric(horizontal: 15),
+                          ),
                           //2
 Column(
                             children: [
@@ -76,7 +82,15 @@ Column(
                             
                           )
               ],
-             )
+             ),
+             SizedBox(height: 15,),
+             Container(
+              width: 140,
+              height: 47,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black12),
+              ),
+             ),
             ],
           ),
         ],
