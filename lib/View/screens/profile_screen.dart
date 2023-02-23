@@ -45,8 +45,35 @@ class ProfileScreen extends StatelessWidget {
               children: [
                           Column(
                             children: [
-                              Text('10',style: TextStyle(fontSize: 20, ),)
+                              Text('10',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold ),),
+                              const SizedBox(height: 5,),
+                              Text('Following', style: TextStyle(
+                                fontSize: 14,
+                              ),)
                             ],
+                            
+                          ),
+                          //2
+Column(
+                            children: [
+                              Text('1',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold ),),
+                              const SizedBox(height: 5,),
+                              Text('Followers', style: TextStyle(
+                                fontSize: 14,
+                              ),)
+                            ],
+                            
+                          ),
+                          //3
+                          Column(
+                            children: [
+                              Text('2',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold ),),
+                              const SizedBox(height: 5,),
+                              Text('Likes', style: TextStyle(
+                                fontSize: 14,
+                              ),)
+                            ],
+                            
                           )
               ],
              )
