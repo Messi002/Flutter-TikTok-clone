@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 ///[pages] to navigate to the different screens
 List<Widget> pages =  [
   VideoScreen(),
-  const SearchScreen(),
+   SearchScreen(),
   const AddVideoScreen(),
   const Text('message screen'),
   const Text('profile screen'),

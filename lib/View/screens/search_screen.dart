@@ -1,8 +1,11 @@
+import 'package:ap2/Controller/search_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
+   SearchScreen({super.key});
 
+  SearchController searchController = Get.put(SearchController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
