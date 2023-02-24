@@ -31,9 +31,10 @@ class ProfileScreen extends StatelessWidget {
                       fit: BoxFit.cover,
                       height: 100,
                       width: 100,
-        imageUrl: "http://via.placeholder.com/350x150",
+        imageUrl: "",
         progressIndicatorBuilder: (context, url, downloadProgress) => 
-                CircularProgressIndicator(value: downloadProgress.progress),
+                const CircularProgressIndicator(),
+                // CircularProgressIndicator(value: downloadProgress.progress),
         errorWidget: (context, url, error) =>const Icon(Icons.error),
      ),
                   ),
@@ -59,6 +60,8 @@ class ProfileScreen extends StatelessWidget {
                             height: 15,
                             margin: const EdgeInsets.symmetric(horizontal: 15),
                           ),
+
+                          
                           //2
 Column(
                             children: [
@@ -69,6 +72,12 @@ Column(
                               ),)
                             ],
                             
+                          ),
+                             Container(
+                            color: Colors.black54,
+                            width: 1,
+                            height: 15,
+                            margin: const EdgeInsets.symmetric(horizontal: 15),
                           ),
                           //3
                           Column(
@@ -90,6 +99,9 @@ Column(
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black12),
               ),
+              child: Center(child: InkWell(
+                onTap: (){},
+                child: const Text('Sign Out')),),
              ),
             ],
           ),
