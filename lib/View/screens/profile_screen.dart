@@ -31,78 +31,114 @@ class ProfileScreen extends StatelessWidget {
                       fit: BoxFit.cover,
                       height: 100,
                       width: 100,
-        imageUrl: "",
-        progressIndicatorBuilder: (context, url, downloadProgress) => 
-                const CircularProgressIndicator(),
-                // CircularProgressIndicator(value: downloadProgress.progress),
-        errorWidget: (context, url, error) =>const Icon(Icons.error),
-     ),
+                      imageUrl: "",
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) =>
+                              const CircularProgressIndicator(),
+                      // CircularProgressIndicator(value: downloadProgress.progress),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
+                    ),
                   ),
                 ],
               ),
-             const SizedBox(height: 15,),
-             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                          Column(
-                            children: [
-                              Text('10',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold ),),
-                              const SizedBox(height: 5,),
-                              Text('Following', style: TextStyle(
-                                fontSize: 14,
-                              ),)
-                            ],
-                            
-                          ),
-                          Container(
-                            color: Colors.black54,
-                            width: 1,
-                            height: 15,
-                            margin: const EdgeInsets.symmetric(horizontal: 15),
-                          ),
-
-                          
-                          //2
-Column(
-                            children: [
-                              Text('1',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold ),),
-                              const SizedBox(height: 5,),
-                              Text('Followers', style: TextStyle(
-                                fontSize: 14,
-                              ),)
-                            ],
-                            
-                          ),
-                             Container(
-                            color: Colors.black54,
-                            width: 1,
-                            height: 15,
-                            margin: const EdgeInsets.symmetric(horizontal: 15),
-                          ),
-                          //3
-                          Column(
-                            children: [
-                              Text('2',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold ),),
-                              const SizedBox(height: 5,),
-                              Text('Likes', style: TextStyle(
-                                fontSize: 14,
-                              ),)
-                            ],
-                            
-                          )
-              ],
-             ),
-             SizedBox(height: 15,),
-             Container(
-              width: 140,
-              height: 47,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black12),
+              const SizedBox(
+                height: 15,
               ),
-              child: Center(child: InkWell(
-                onTap: (){},
-                child: const Text('Sign Out')),),
-             ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        '10',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'Following',
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                    color: Colors.black54,
+                    width: 1,
+                    height: 15,
+                    margin: const EdgeInsets.symmetric(horizontal: 15),
+                  ),
+
+                  //2
+                  Column(
+                    children: [
+                      Text(
+                        '1',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'Followers',
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                    color: Colors.black54,
+                    width: 1,
+                    height: 15,
+                    margin: const EdgeInsets.symmetric(horizontal: 15),
+                  ),
+                  //3
+                  Column(
+                    children: [
+                      Text(
+                        '2',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'Likes',
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Container(
+                width: 140,
+                height: 47,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black12),
+                ),
+                child: Center(
+                  child: InkWell(
+                      onTap: () {},
+                      child: const Text(
+                        'Sign Out',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15),
+                      )),
+                ),
+              ),
+              //TODO: video list
             ],
           ),
         ],
