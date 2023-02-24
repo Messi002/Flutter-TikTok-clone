@@ -1,11 +1,13 @@
+import 'package:ap2/Controller/auth_controller.dart';
 import 'package:ap2/Controller/profilescreen_controller.dart';
+import 'package:ap2/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProfileScreen extends StatefulWidget {
   final String uid;
-   ProfileScreen({super.key, required this.uid});
+  ProfileScreen({super.key, required this.uid});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -15,10 +17,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final ProfileController profileController = ProfileController();
 
   @override
+  void initState() {
+    profileController.updateUserId(widget.uid);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GetBuilder<ProfileController>(
         init: ProfileController(),
         builder: (controller) {
+          if (controller.user.isEmpty) {
+            return const Center(
+              child: CircularProgressIndicator.adaptive(),
+            );
+          }
           return Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.black12,
@@ -26,8 +39,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               actions: const [
                 Icon(Icons.more_horiz),
               ],
-              title: const Text(
-                'username',
+              title: Text(
+                controller.user['name'],
                 style:
                     TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
               ),
@@ -44,7 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             fit: BoxFit.cover,
                             height: 100,
                             width: 100,
-                            imageUrl: "",
+                            imageUrl: controller.user['profilePhoto'],
                             progressIndicatorBuilder:
                                 (context, url, downloadProgress) =>
                                     const CircularProgressIndicator(),
@@ -64,7 +77,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Column(
                           children: [
                             Text(
-                              '10',
+                              controller.user['following'],
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
@@ -98,7 +111,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               height: 5,
                             ),
                             Text(
-                              'Followers',
+                              controller.user['followers'],
                               style: TextStyle(
                                 fontSize: 14,
                               ),
@@ -123,7 +136,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               height: 5,
                             ),
                             Text(
-                              'Likes',
+                              controller.user['likes'],
                               style: TextStyle(
                                 fontSize: 14,
                               ),
@@ -144,9 +157,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: Center(
                         child: InkWell(
                             onTap: () {},
-                            child: const Text(
-                              'Sign Out',
-                              style: TextStyle(
+                            child:  Text(
+                              widget.uid == authController.user?.uid ?
+                              'Sign Out' : controller.user['isFollowing'] ? 'Follow' : 'Unfollow' ,
+                              style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 15),
                             )),
                       ),
