@@ -88,7 +88,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Column(
                                 children: [
                                   Text(
-                              
+                                    controller.user['following'],
+                                    style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 5),
+                                  const Text(
+                                    'Following',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
                               ),
                               Container(
                                 color: Colors.black54,
