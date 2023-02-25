@@ -16,7 +16,7 @@ class AuthController extends GetxController {
 //making observable the user model from firebase to know whether we can
 //automaticatlly login the user or not
   late Rx<User?> _user;
-  User? get user => _user.value;
+ User get user => _user.value!;
 
 //onready just like oninit being called on the _user to know whether it is null or not
 
@@ -115,5 +115,9 @@ class AuthController extends GetxController {
     } catch (e) {
       Get.snackbar("Error logging in", e.toString());
     }
+  }
+
+  void signOut() async {
+    await firebaseAuth.signOut();
   }
 }

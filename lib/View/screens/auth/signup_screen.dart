@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ap2/View/screens/auth/login_screen.dart';
 import 'package:ap2/View/widgets/text_input_field.dart';
 import 'package:ap2/constants.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,8 @@ class SignUpScreen extends StatelessWidget {
                           bottom: -10,
                           left: 80,
                           child: IconButton(
-                              onPressed: () => authController.pickImage(), icon: Icon(Icons.add_a_photo)))
+                              onPressed: () => authController.pickImage(),
+                              icon: Icon(Icons.add_a_photo)))
                     ],
                   ),
                   SizedBox(height: 10),
@@ -96,8 +98,7 @@ class SignUpScreen extends StatelessWidget {
                             _usernameController.text.trim(),
                             _emailController.text.trim(),
                             _passwordController.text.trim(),
-                            authController.profilePhoto
-                            ),
+                            authController.profilePhoto),
                         child: const Center(
                             child: Text(
                           'Register',
@@ -115,7 +116,9 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       InkWell(
                           onTap: () {
-                            Navigator.pop(context);
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ));
                           },
                           child: Text(
                             "Login",
